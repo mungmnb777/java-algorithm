@@ -50,7 +50,7 @@ end for
     우선 그 의미를 해석하기 전에 이 코드가 도대체 어떤 기능을 해주는지 한번 확인해보자.
     
 
-![패턴 문자열 1](kmp/image/kmp1.png)
+![패턴 문자열 1](kmp/image/kmp/kmp1.png)
 
 여기 문자열 패턴과 각각의 인덱스에 해당하는 부분 일치 테이블이 있다. 이때 header는 5번 인덱스를, footer는 11번 인덱스를 가리키는 시점을 한번 보자.
 
@@ -58,7 +58,7 @@ end for
 
 그럼 현재 pi[4]는 1이므로 header가 1번 인덱스로 옮겨가게 된다. 
 
-![패턴 문자열 2](kmp/image/kmp2.png)
+![패턴 문자열 2](kmp/image/kmp/kmp2.png)
 
 그런데 이 때 header와 footer를 다시 비교해보니 둘 다 ‘a’로 문자가 같다. 그래서 pi[11]은 header에 1을 더한 값인 2가 된다.
 
@@ -71,17 +71,17 @@ pi[]는 내가 해석하기에는 footer가 가지고 있는 substring에서 접
 
 자 그러면 새로운 사진과 함께 다시 pi[header - 1]에 대해서 생각해보자.
 
-![패턴 문자열 3](kmp/image/kmp3.png)
+![패턴 문자열 3](kmp/image/kmp/kmp3.png)
 
 이 사진을 보면 0 ~ header의 substring(`babcbc`)과 header + 1 ~ footer의 substring(`babcba`)은 다르지만 그 직전 포인터까지의 substring(`babcb`)은 같다는 것을 알 수 있다.
 그러면 header - 1(`babcb`)이 접미사를 가지고 있다면 그 시점에서의 접두사 또한 존재했다는 뜻이고, footer 또한 그 접두사를 가질 수 있다.
 말로 설명하기 어려우니 그림으로 표현해보겠다.
 
-![패턴 문자열 4](kmp/image/kmp4.png)
+![패턴 문자열 4](kmp/image/kmp/kmp4.png)
 
 그리고 pi[header - 1]이 곧 babcb일 때 다음 header의 위치이므로 그 위치에 header를 옮겨 준 후 다시 header와 footer를 비교하는 것이다
 
-![패턴 문자열 5](kmp/image/kmp5.png)
+![패턴 문자열 5](kmp/image/kmp/kmp5.png)
 
 이걸 위해 그 while문을 사용하는 것이다.
 
@@ -91,4 +91,4 @@ pi[]는 내가 해석하기에는 footer가 가지고 있는 substring에서 접
 
 블로그에 정리해보면서 KMP에 대해서 조금 더 깊은 이해를 할 수 있게 된 것 같다. 다만 글쓰는 능력이 부족해서 나중에 친구들에게 설명을 하라고 했을 때 블로그를 보여줘서 이해시키기는 어려울 것 같다.. 블로그도 자주 쓰면서 글 쓰는 연습을 자주 하고, 내 생각을 깔끔하게 정리하는 법도 연습을 많이 해야겠다.
 
-github : https://github.com/mungmnb777/java-algorithm/blob/main/code/boj/Main_1786_찾기.java
+code : https://github.com/mungmnb777/java-algorithm/blob/main/code/boj/Main_1786_찾기.java

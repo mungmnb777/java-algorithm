@@ -10,4 +10,4 @@ answer를 결정짓는 주요 조건은
     - 이 때는 마지막 버스를 마지막에 탄 사람의 시간보다 1분 빠른 시간을 answer에 담으면 됨
     - ex) 만약 마지막에 탄 사람이 “09:00”이면 answer는 “08:59”가 됨
 
-# [[풀이]](https://github.com/mungmnb777/java-algorithm/tree/main/code/programmers/Solution_셔틀버스.java)
+# [[코드]](https://github.com/mungmnb777/java-algorithm/tree/main/code/programmers/Solution_셔틀버스.java)
